@@ -1,15 +1,18 @@
-use crate::states::app_config::AppConfig;
+use crate::config::app_config::AppConfig;
 use actix_web::{web, App, HttpServer};
 use dotenv::dotenv;
+use log::info;
 use std::env;
 
+mod config;
 mod handler;
 mod models;
 mod router;
-mod states;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    info!("Starting the Actix web server");
+
     // load the environment variables from the .env file
     dotenv().ok();
 

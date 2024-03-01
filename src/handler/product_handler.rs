@@ -1,6 +1,6 @@
 use actix_web::{web, HttpResponse};
 
-use crate::states::app_config;
+use crate::config::app_config;
 
 pub async fn get_products(app_config: web::Data<app_config::AppConfig>) -> HttpResponse {
     HttpResponse::Ok().json({
